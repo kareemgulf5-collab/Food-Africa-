@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>EgyGulf Foods | Food Africa</title>
+<meta name="description" content="سجّل بياناتك مع إيجي جالف فودز وكمّل تسجيل زيارتك لمعرض Food Africa.">
+<meta property="og:title" content="EgyGulf Foods | Food Africa">
+<meta property="og:description" content="زورونا في معرض Food Africa">
+<meta name="theme-color" content="#2E2A72">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#2E2A72; --navy-dark:#221F5C; --gold:#F9B917; --red:#E31E24; --wine:#6B0A22;
+    --ink:#1C1A3A; --muted:#6C6A86; --line:#DEDCEB; --field:#F7F7FB; --err:#C62828; --ok:#1E8E5A;
+  }
+  *{box-sizing:border-box}
+  [hidden]{display:none!important}
+  html,body{margin:0}
+  body{font-family:"Cairo",system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--ink);line-height:1.6;
+    background:var(--navy-dark);-webkit-font-smoothing:antialiased;min-height:100vh;display:flex;flex-direction:column}
+
+  .page{flex:1;position:relative;overflow:hidden;color:#fff;
+    background:linear-gradient(160deg,var(--navy-dark) 0%,var(--navy) 60%,var(--navy) 100%);
+    padding:max(20px,env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-right,0px)) 40px max(16px,env(safe-area-inset-left,0px))}
+  .page::before,.page::after{content:"";position:absolute;border-radius:50%;pointer-events:none;filter:blur(70px)}
+  .page::before{width:620px;height:620px;left:-160px;top:-180px;
+    background:radial-gradient(circle,rgba(227,30,36,.75) 0%,rgba(107,10,34,.55) 45%,transparent 70%)}
+  .page::after{width:560px;height:560px;left:18%;bottom:-260px;
+    background:radial-gradient(circle,rgba(249,185,23,.32) 0%,rgba(227,30,36,.25) 40%,transparent 70%)}
+  .glow{position:absolute;width:480px;height:480px;right:-140px;top:30%;border-radius:50%;filter:blur(80px);pointer-events:none;
+    background:radial-gradient(circle,rgba(107,10,34,.7) 0%,rgba(59,42,110,.4) 50%,transparent 70%)}
+  .wrap{max-width:1100px;margin:0 auto;position:relative;z-index:1}
+
+  .top{display:flex;align-items:center;gap:16px}
+  .logo{border-radius:12px;display:inline-flex;overflow:hidden;height:58px;box-shadow:0 10px 24px -10px rgba(0,0,0,.5)}
+  .logo.eg{background:#fff;padding:9px 14px}
+  .logo.fa{background:#ED1C24}
+  .logo img{height:100%;width:auto;display:block}
+  .x{font-size:30px;font-weight:300;line-height:1;color:rgba(255,255,255,.85)}
+
+  .body{display:grid;grid-template-columns:1fr 440px;gap:56px;align-items:center;margin-top:56px}
+  .body > *{min-width:0}
+  h1{font-weight:800;font-size:clamp(30px,4.6vw,48px);line-height:1.3;margin:0 0 14px}
+  h1 span{color:var(--gold)}
+  .lead{font-size:18px;opacity:.9;margin:0;max-width:44ch}
+  .cats{display:flex;flex-wrap:wrap;gap:8px;margin:24px 0 0;padding:0;list-style:none}
+  .cats li{font-size:14px;font-weight:600;padding:5px 14px;border-radius:8px;background:var(--gold);color:var(--navy-dark)}
+
+  .card{background:#fff;color:var(--ink);border-radius:18px;padding:28px 26px;box-shadow:0 24px 50px -18px rgba(0,0,0,.45)}
+  .card h2{font-size:22px;font-weight:800;margin:0 0 18px;color:var(--navy)}
+
+  form{display:grid;gap:14px}
+  .field{display:grid;gap:6px}
+  .field label{font-size:14px;font-weight:700}
+  .field label small{font-weight:400;color:var(--muted);font-size:13px}
+  .input{display:flex;border:1.5px solid var(--line);border-radius:12px;background:var(--field);transition:border-color .2s}
+  .input:focus-within{border-color:var(--navy);background:#fff}
+  .input input,.input select{font:inherit;font-size:16px;border:0;background:transparent;color:var(--ink);padding:12px 14px;width:100%;min-width:0;outline:none}
+  .input select{width:auto;flex:none;padding-inline:12px 8px;border-inline-end:1.5px solid var(--line);cursor:pointer}
+  .field.bad .input{border-color:var(--err)}
+  .msg{font-size:13px;color:var(--err)}
+  .msg:empty{display:none}
+
+  .btn{font:inherit;font-weight:800;font-size:17px;border:0;border-radius:12px;padding:14px;margin-top:4px;cursor:pointer;
+    color:#fff;background:var(--navy);transition:background .2s}
+  .btn:hover{background:var(--navy-dark)}
+  .btn:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+  .btn[disabled]{opacity:.8;cursor:wait}
+
+  .done{text-align:center;padding:20px 0 8px}
+  .done .ok{width:64px;height:64px;margin:0 auto 12px;border-radius:50%;background:var(--ok);display:grid;place-items:center}
+  .done .ok svg{width:32px;height:32px;color:#fff}
+  .done h3{font-size:20px;font-weight:800;margin:0 0 6px;color:var(--navy)}
+  .done p{margin:0 0 8px;color:var(--muted);font-size:15px}
+  .done a{font-weight:700;color:var(--navy)}
+
+  footer{background:var(--navy-dark);color:rgba(255,255,255,.6);text-align:center;font-size:13px;
+    padding:14px 16px max(16px,env(safe-area-inset-bottom,0px))}
+
+  @media (max-width:900px){
+    .page::before{width:420px;height:420px;left:-180px;top:-120px}
+    .page::after{width:380px;height:380px;left:auto;right:-160px;bottom:-140px}
+    .glow{width:320px;height:320px;right:-120px;top:22%}
+    .body{grid-template-columns:1fr;gap:28px;margin-top:32px}
+  }
+  @media (max-width:480px){
+    .logo{height:46px}
+    .logo.eg{padding:7px 10px}
+    .top{gap:10px}
+    .x{font-size:24px}
+    .card{padding:22px 18px}
+    .lead{font-size:16px}
+  }
+  @media (prefers-reduced-motion: reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<div class="page">
+  <div class="glow"></div>
+  <div class="wrap">
+    <div class="top">
+      <span class="logo eg"><img src="data:image/png;base64,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" alt="EgyGulf Foods"></span>
+      <span class="x" aria-hidden="true">×</span>
+      <span class="logo fa"><img src="data:image/png;base64,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" alt="Food Africa"></span>
+    </div>
+
+    <div class="body">
+      <div>
+        <h1>زورونا في معرض <span>Food Africa</span></h1>
+        <p class="lead">إيجي جالف فودز بتستناك في المعرض. سجّل بياناتك وكمّل تسجيل زيارتك.</p>
+        <ul class="cats">
+          <li>حلويات</li><li>مصاصات</li><li>مكرونة</li><li>سناكس</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div id="formView">
+          <h2>سجّل بياناتك</h2>
+          <form id="f" novalidate>
+            <div class="field" id="fName">
+              <label for="name">الاسم</label>
+              <div class="input"><input id="name" name="name" autocomplete="name" required></div>
+              <div class="msg" id="mName"></div>
+            </div>
+
+            <div class="field">
+              <label for="company">الشركة <small>(اختياري)</small></label>
+              <div class="input"><input id="company" name="company" autocomplete="organization"></div>
+            </div>
+
+            <div class="field" id="fPhone">
+              <label for="phone">رقم الموبايل</label>
+              <div class="input" dir="ltr">
+                <select id="cc" name="cc" aria-label="كود الدولة">
+                  <option value="+20" selected>+20 مصر</option>
+                  <option value="+966">+966 السعودية</option>
+                  <option value="+971">+971 الإمارات</option>
+                  <option value="+965">+965 الكويت</option>
+                  <option value="+974">+974 قطر</option>
+                  <option value="+968">+968 عمان</option>
+                  <option value="+973">+973 البحرين</option>
+                  <option value="+962">+962 الأردن</option>
+                  <option value="+964">+964 العراق</option>
+                  <option value="+961">+961 لبنان</option>
+                  <option value="+218">+218 ليبيا</option>
+                  <option value="+213">+213 الجزائر</option>
+                  <option value="+216">+216 تونس</option>
+                  <option value="+212">+212 المغرب</option>
+                  <option value="+249">+249 السودان</option>
+                  <option value="+967">+967 اليمن</option>
+                  <option value="+">دولة أخرى</option>
+                </select>
+                <input id="phone" name="phone" type="tel" inputmode="tel" dir="ltr" autocomplete="tel-national" required>
+              </div>
+              <div class="msg" id="mPhone"></div>
+            </div>
+
+            <button class="btn" id="btn" type="submit">تسجيل</button>
+          </form>
+        </div>
+
+        <div id="doneView" class="done" hidden>
+          <div class="ok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>
+          <h3>شكرًا <span id="who"></span></h3>
+          <p>جاري تحويلك لصفحة تسجيل المعرض…</p>
+          <p><a id="go" href="https://foodafrica-expo.com/Register-To-Visit">اضغط هنا لو الصفحة متفتحتش</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>© EgyGulf Foods</footer>
+
+<script>
+  const SHEET_URL = "https://script.google.com/macros/s/AKfycbz-Z-oub4_BvsT3fxPUufilh9_wdJB78BuIphBh3lzhj6QiRGN2-go-ywgtE1UVCwMn/exec";
+  const TARGET = "https://foodafrica-expo.com/Register-To-Visit";
+
+  const $ = id => document.getElementById(id);
+  const f = $("f"), btn = $("btn");
+
+  function setErr(field, msgEl, text){
+    $(field).classList.toggle("bad", !!text);
+    $(msgEl).textContent = text || "";
+  }
+  $("name").addEventListener("input", () => setErr("fName", "mName", ""));
+  $("phone").addEventListener("input", () => setErr("fPhone", "mPhone", ""));
+
+  f.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const name = $("name").value.trim();
+    const company = $("company").value.trim();
+    let digits = $("phone").value.replace(/[^\d]/g, "");
+    const cc = $("cc").value;
+
+    let ok = true;
+    if (name.length < 2) { setErr("fName", "mName", "اكتب اسمك"); ok = false; }
+    if (digits.length < 7 || digits.length > 15) { setErr("fPhone", "mPhone", "اكتب رقم صحيح"); ok = false; }
+    if (!ok) { (name.length < 2 ? $("name") : $("phone")).focus(); return; }
+
+    if (cc !== "+") digits = digits.replace(/^0+/, "");
+    const phone = cc === "+" ? "+" + digits : cc + digits;
+
+    btn.disabled = true;
+    btn.textContent = "جاري التسجيل…";
+
+    const body = new URLSearchParams({
+      name, company, phone,
+      source: new URLSearchParams(location.search).get("ref") || "",
+      userAgent: navigator.userAgent
+    });
+    const save = fetch(SHEET_URL, { method: "POST", mode: "no-cors", body }).catch(() => {});
+    await Promise.race([save, new Promise(r => setTimeout(r, 2500))]);
+
+    $("formView").hidden = true;
+    $("doneView").hidden = false;
+    $("who").textContent = name.split(" ")[0];
+    setTimeout(() => location.replace(TARGET), 1500);
+  });
+</script>
+</body>
+</html>
