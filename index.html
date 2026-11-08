@@ -177,7 +177,7 @@
 <footer>© EgyGulf Foods</footer>
 
 <script>
-  const SHEET_URL = "https://script.google.com/macros/s/AKfycbz-Z-oub4_BvsT3fxPUufilh9_wdJB78BuIphBh3lzhj6QiRGN2-go-ywgtE1UVCwMn/exec";
+  const SHEET_URL = "https://script.google.com/macros/s/AKfycbwjEIFYn4di6zKIQRMsgmCpQY6V3j9MH0hlSCGJABEvgMIadYVSDX0bjZBA1CnEXHBM/exec";
   const TARGET = "https://foodafrica-expo.com/Register-To-Visit";
 
   const $ = id => document.getElementById(id);
@@ -213,8 +213,12 @@
       source: new URLSearchParams(location.search).get("ref") || "",
       userAgent: navigator.userAgent
     });
-    const save = fetch(SHEET_URL, { method: "POST", mode: "no-cors", body }).catch(() => {});
-    await Promise.race([save, new Promise(r => setTimeout(r, 2500))]);
+    let sent = false;
+    try { sent = navigator.sendBeacon && navigator.sendBeacon(SHEET_URL, body); } catch (_) {}
+    if (!sent) {
+      const save = fetch(SHEET_URL, { method: "POST", mode: "no-cors", body, keepalive: true }).catch(() => {});
+      await Promise.race([save, new Promise(r => setTimeout(r, 2500))]);
+    }
 
     $("formView").hidden = true;
     $("doneView").hidden = false;
