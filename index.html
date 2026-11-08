@@ -1,16 +1,16 @@
 <!doctype html>
-<html lang="ar" dir="rtl">
+<html lang="en" dir="ltr">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>EgyGulf Foods | Food Africa</title>
-<meta name="description" content="سجّل بياناتك مع إيجي جالف فودز وكمّل تسجيل زيارتك لمعرض Food Africa.">
+<meta name="description" content="Register with EgyGulf Foods and continue to your Food Africa visitor registration.">
 <meta property="og:title" content="EgyGulf Foods | Food Africa">
-<meta property="og:description" content="زورونا في معرض Food Africa">
+<meta property="og:description" content="Visit EgyGulf Foods at Food Africa">
 <meta name="theme-color" content="#2E2A72">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
     --navy:#2E2A72; --navy-dark:#221F5C; --gold:#F9B917; --red:#E31E24; --wine:#6B0A22;
@@ -19,7 +19,7 @@
   *{box-sizing:border-box}
   [hidden]{display:none!important}
   html,body{margin:0}
-  body{font-family:"Cairo",system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--ink);line-height:1.6;
+  body{font-family:"Poppins",system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--ink);line-height:1.6;
     background:var(--navy-dark);-webkit-font-smoothing:antialiased;min-height:100vh;display:flex;flex-direction:column}
 
   .page{flex:1;position:relative;overflow:hidden;color:#fff;
@@ -43,14 +43,14 @@
 
   .body{display:grid;grid-template-columns:1fr 440px;gap:56px;align-items:center;margin-top:56px}
   .body > *{min-width:0}
-  h1{font-weight:800;font-size:clamp(30px,4.6vw,48px);line-height:1.3;margin:0 0 14px}
+  h1{font-weight:700;font-size:clamp(30px,4.6vw,48px);line-height:1.3;margin:0 0 14px}
   h1 span{color:var(--gold)}
   .lead{font-size:18px;opacity:.9;margin:0;max-width:44ch}
   .cats{display:flex;flex-wrap:wrap;gap:8px;margin:24px 0 0;padding:0;list-style:none}
   .cats li{font-size:14px;font-weight:600;padding:5px 14px;border-radius:8px;background:var(--gold);color:var(--navy-dark)}
 
   .card{background:#fff;color:var(--ink);border-radius:18px;padding:28px 26px;box-shadow:0 24px 50px -18px rgba(0,0,0,.45)}
-  .card h2{font-size:22px;font-weight:800;margin:0 0 18px;color:var(--navy)}
+  .card h2{font-size:22px;font-weight:700;margin:0 0 18px;color:var(--navy)}
 
   form{display:grid;gap:14px}
   .field{display:grid;gap:6px}
@@ -58,13 +58,13 @@
   .field label small{font-weight:400;color:var(--muted);font-size:13px}
   .input{display:flex;border:1.5px solid var(--line);border-radius:12px;background:var(--field);transition:border-color .2s}
   .input:focus-within{border-color:var(--navy);background:#fff}
-  .input input,.input select{font:inherit;font-size:16px;border:0;background:transparent;color:var(--ink);padding:12px 14px;width:100%;min-width:0;outline:none}
-  .input select{width:auto;flex:none;padding-inline:12px 8px;border-inline-end:1.5px solid var(--line);cursor:pointer}
+  .input input::placeholder{color:#A9A7BE}
+  .input input{font:inherit;font-size:16px;border:0;background:transparent;color:var(--ink);padding:12px 14px;width:100%;min-width:0;outline:none}
   .field.bad .input{border-color:var(--err)}
   .msg{font-size:13px;color:var(--err)}
   .msg:empty{display:none}
 
-  .btn{font:inherit;font-weight:800;font-size:17px;border:0;border-radius:12px;padding:14px;margin-top:4px;cursor:pointer;
+  .btn{font:inherit;font-weight:700;font-size:17px;border:0;border-radius:12px;padding:14px;margin-top:4px;cursor:pointer;
     color:#fff;background:var(--navy);transition:background .2s}
   .btn:hover{background:var(--navy-dark)}
   .btn:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
@@ -73,7 +73,7 @@
   .done{text-align:center;padding:20px 0 8px}
   .done .ok{width:64px;height:64px;margin:0 auto 12px;border-radius:50%;background:var(--ok);display:grid;place-items:center}
   .done .ok svg{width:32px;height:32px;color:#fff}
-  .done h3{font-size:20px;font-weight:800;margin:0 0 6px;color:var(--navy)}
+  .done h3{font-size:20px;font-weight:700;margin:0 0 6px;color:var(--navy)}
   .done p{margin:0 0 8px;color:var(--muted);font-size:15px}
   .done a{font-weight:700;color:var(--navy)}
 
@@ -110,64 +110,45 @@
 
     <div class="body">
       <div>
-        <h1>زورونا في معرض <span>Food Africa</span></h1>
-        <p class="lead">إيجي جالف فودز بتستناك في المعرض. سجّل بياناتك وكمّل تسجيل زيارتك.</p>
+        <h1>Visit us at <span>Food Africa</span></h1>
+        <p class="lead">EgyGulf Foods is waiting for you at the exhibition. Leave your details and continue to your visitor registration.</p>
         <ul class="cats">
-          <li>حلويات</li><li>مصاصات</li><li>مكرونة</li><li>سناكس</li>
+          <li>Confectionery</li><li>Lollipops</li><li>Pasta</li><li>Snacks</li>
         </ul>
       </div>
 
       <div class="card">
         <div id="formView">
-          <h2>سجّل بياناتك</h2>
+          <h2>Your details</h2>
           <form id="f" novalidate>
             <div class="field" id="fName">
-              <label for="name">الاسم</label>
+              <label for="name">Full name</label>
               <div class="input"><input id="name" name="name" autocomplete="name" required></div>
               <div class="msg" id="mName"></div>
             </div>
 
             <div class="field">
-              <label for="company">الشركة <small>(اختياري)</small></label>
+              <label for="company">Company <small>(optional)</small></label>
               <div class="input"><input id="company" name="company" autocomplete="organization"></div>
             </div>
 
             <div class="field" id="fPhone">
-              <label for="phone">رقم الموبايل</label>
-              <div class="input" dir="ltr">
-                <select id="cc" name="cc" aria-label="كود الدولة">
-                  <option value="+20" selected>+20 مصر</option>
-                  <option value="+966">+966 السعودية</option>
-                  <option value="+971">+971 الإمارات</option>
-                  <option value="+965">+965 الكويت</option>
-                  <option value="+974">+974 قطر</option>
-                  <option value="+968">+968 عمان</option>
-                  <option value="+973">+973 البحرين</option>
-                  <option value="+962">+962 الأردن</option>
-                  <option value="+964">+964 العراق</option>
-                  <option value="+961">+961 لبنان</option>
-                  <option value="+218">+218 ليبيا</option>
-                  <option value="+213">+213 الجزائر</option>
-                  <option value="+216">+216 تونس</option>
-                  <option value="+212">+212 المغرب</option>
-                  <option value="+249">+249 السودان</option>
-                  <option value="+967">+967 اليمن</option>
-                  <option value="+">دولة أخرى</option>
-                </select>
-                <input id="phone" name="phone" type="tel" inputmode="tel" dir="ltr" autocomplete="tel-national" required>
+              <label for="phone">Mobile number <small>(with country code)</small></label>
+              <div class="input">
+                <input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+20 100 123 4567" required>
               </div>
               <div class="msg" id="mPhone"></div>
             </div>
 
-            <button class="btn" id="btn" type="submit">تسجيل</button>
+            <button class="btn" id="btn" type="submit">Register</button>
           </form>
         </div>
 
         <div id="doneView" class="done" hidden>
           <div class="ok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>
-          <h3>شكرًا <span id="who"></span></h3>
-          <p>جاري تحويلك لصفحة تسجيل المعرض…</p>
-          <p><a id="go" href="https://foodafrica-expo.com/Register-To-Visit">اضغط هنا لو الصفحة متفتحتش</a></p>
+          <h3>Thank you, <span id="who"></span></h3>
+          <p>Taking you to the Food Africa registration page…</p>
+          <p><a id="go" href="https://foodafrica-expo.com/Register-To-Visit">Click here if the page doesn't open</a></p>
         </div>
       </div>
     </div>
@@ -194,19 +175,16 @@
     e.preventDefault();
     const name = $("name").value.trim();
     const company = $("company").value.trim();
-    let digits = $("phone").value.replace(/[^\d]/g, "");
-    const cc = $("cc").value;
+    const phone = $("phone").value.trim();
+    const digits = phone.replace(/[^\d]/g, "");
 
     let ok = true;
-    if (name.length < 2) { setErr("fName", "mName", "اكتب اسمك"); ok = false; }
-    if (digits.length < 7 || digits.length > 15) { setErr("fPhone", "mPhone", "اكتب رقم صحيح"); ok = false; }
+    if (name.length < 2) { setErr("fName", "mName", "Please enter your name"); ok = false; }
+    if (digits.length < 7 || digits.length > 15) { setErr("fPhone", "mPhone", "Please enter a valid mobile number"); ok = false; }
     if (!ok) { (name.length < 2 ? $("name") : $("phone")).focus(); return; }
 
-    if (cc !== "+") digits = digits.replace(/^0+/, "");
-    const phone = cc === "+" ? "+" + digits : cc + digits;
-
     btn.disabled = true;
-    btn.textContent = "جاري التسجيل…";
+    btn.textContent = "Registering…";
 
     const body = new URLSearchParams({
       name, company, phone,
